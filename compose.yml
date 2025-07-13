@@ -1,0 +1,27 @@
+services:
+  db:
+    container_name: db
+    image: postgres:15
+    restart: always
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: summaries
+    ports:
+      - 5432:5432
+  redis:
+    container_name: redis
+    image: redis:8
+    restart: always
+    volumes:
+      - redis-data:/data
+    ports:
+      - 6379:6379
+
+volumes:
+  postgres-db:
+    external: false
+  redis-data:
+    external: false
