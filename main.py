@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from core.config import settings
 from db.database import create_all_tables
+from routes.job import router
 
 
 @asynccontextmanager
@@ -23,6 +24,8 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware, allow_origins=["*"], allow_headers=["*"], allow_methods=["*"]
 )
+
+app.include_router(router)
 
 
 @app.get("/healthcheck")

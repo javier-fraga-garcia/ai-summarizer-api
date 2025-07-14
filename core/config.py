@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     API_PREFIX: str
     DEBUG: bool = False
     DATABASE_URL: str
-    REDIS_URL: str
+    CELERY_BROKER: str
     GOOGLE_API_KEY: str
     ELEVENLABS_API_KEY: str
 
