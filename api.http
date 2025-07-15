@@ -9,3 +9,9 @@ Content-Type: application/json
     "url": "https://test.com",
     "audio": false
 }
+
+### GET JOB STATUS
+GET http://localhost:3000/api/jobs/92d89976-913d-46a7-aae5-775e0564d725/status
+
+### GET JOB INFO
+GET http://localhost:3000/api/jobs/92d89976-913d-46a7-aae5-775e0564d725/completed

@@ -4,7 +4,7 @@ from models.job import SummaryJob
 import time
 
 
-@celery_app.task(name='scrape_url')
+@celery_app.task(name="scrape_url")
 def scrape_url(url: str, job_id: str) -> dict:
     time.sleep(60)
     db = SessionLocal()
