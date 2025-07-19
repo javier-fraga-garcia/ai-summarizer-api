@@ -10,7 +10,6 @@ def scrape_url(url: str, job_id: str) -> dict:
     db = SessionLocal()
     try:
         job = db.query(SummaryJob).filter(SummaryJob.job_id == job_id).first()
-        print(job_id)
         job.status = "scraped"
         db.flush()
         db.commit()

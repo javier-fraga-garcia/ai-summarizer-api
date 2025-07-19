@@ -1,8 +1,9 @@
 from datetime import datetime, timezone
+import time
+
 from worker.celery_app import celery_app
 from db.database import SessionLocal
 from models.job import SummaryJob
-import time
 
 
 @celery_app.task(name="summarize")
