@@ -7,8 +7,9 @@ class Settings(BaseSettings):
     DEBUG: bool = False
     DATABASE_URL: str
     CELERY_BROKER: str
-    GOOGLE_API_KEY: str
+    GEMINI_API_KEY: str
     ELEVENLABS_API_KEY: str
+    AI_MODEL: str
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 

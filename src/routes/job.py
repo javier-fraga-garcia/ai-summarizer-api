@@ -15,6 +15,7 @@ logger = get_logger(__name__)
 
 router = APIRouter(prefix=f"{settings.API_PREFIX}/jobs", tags=["jobs"])
 
+
 @router.post("/", response_model=JobResponse)
 def create_job(request: JobRequest, db: Session = Depends(get_db)):
     try:

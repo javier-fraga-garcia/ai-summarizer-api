@@ -8,7 +8,7 @@ logger = get_logger(__name__)
 
 class Scraper:
     @staticmethod
-    def scrape(self, url):
+    def scrape(url):
         logger.info(f"Scraping content from {url}")
         article = Article(url)
         article.download()

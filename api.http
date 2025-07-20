@@ -1,8 +1,8 @@
 ### HEALTCHECK
-GET http://localhost:3000/healthcheck
+GET http://localhost:8000/healthcheck
 
 ### CREATE JOB REQUEST
-POST http://localhost:3000/api/jobs
+POST http://localhost:8000/api/jobs
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### GET JOB STATUS
-GET http://localhost:3000/api/jobs/73fe5753-e290-4d47-8a39-faab5625d9b3/status
+GET http://localhost:8000/api/jobs/ed6269d6-9c5f-49d0-9444-4c0514c32826/status
 
 ### GET JOB INFO
-GET http://localhost:3000/api/jobs/73fe5753-e290-4d47-8a39-faab5625d9b3/completed
+GET http://localhost:8000/api/jobs/ed6269d6-9c5f-49d0-9444-4c0514c32826/completed
