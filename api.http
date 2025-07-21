@@ -6,7 +6,7 @@ POST http://localhost:8000/api/jobs
 Content-Type: application/json
 
 {
-    "url": "https://www.elmundo.es/cronica/2025/07/21/687ab2dce9cf4a562e8b4570.html"
+    "url": "http://test.com"
 }
 
 ### GET JOB STATUS
