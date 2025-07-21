@@ -12,6 +12,9 @@ class Settings(BaseSettings):
     GEMINI_MODEL: str
     ELEVENLABS_MODEL: str
     BUCKET_NAME: str
+    ACCESS_KEY: str
+    SECRET_KEY: str
+    AWS_REGION: str
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
