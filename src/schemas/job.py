@@ -4,7 +4,6 @@ from datetime import datetime
 
 class JobRequest(BaseModel):
     url: str
-    audio: bool = False
 
 
 class JobResponse(BaseModel):

@@ -3,8 +3,8 @@ from datetime import datetime, timezone
 from elevenlabs.client import ElevenLabs
 from elevenlabs import save
 
-from config import settings
-from logger import get_logger
+from core.config import settings
+from core.logger import get_logger
 
 logger = get_logger(__name__)
 
@@ -17,6 +17,7 @@ class AudioGenerator:
     @classmethod
     def generate_audio_file(cls, summary: str, job_id: str) -> str:
         cls.tmp_dir.mkdir(parents=True, exist_ok=True)
+        logger.info(summary)
 
         time = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
         file_name = f"audio_{time}_{job_id}.mp3"

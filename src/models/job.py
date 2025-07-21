@@ -12,6 +12,7 @@ class SummaryJob(Base):
     url = Column(Text)
     summary = Column(Text, nullable=True)
     audio_url = Column(Text, nullable=True)
+    file_key = Column(Text, nullable=True)
     status = Column(String, default="pending")
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     completed_at = Column(DateTime(timezone=True), nullable=True)

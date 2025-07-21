@@ -1,7 +1,7 @@
 import boto3
 
-from config import settings
-from logger import get_logger
+from core.config import settings
+from core.logger import get_logger
 
 logger = get_logger(__name__)
 
@@ -17,7 +17,7 @@ class StorageService:
     )
 
     @classmethod
-    def store(cls, file_path: str) -> None:
+    def store(cls, file_path: str) -> dict:
         file_key = f"summaries/{file_path.split('/')[-1]}"
         logger.info(f"Uploading file {file_key} to bucket")
 
@@ -27,7 +27,7 @@ class StorageService:
         presigned_url = cls.client.generate_presigned_url(
             "get_object",
             Params={"Bucket": settings.BUCKET_NAME, "Key": file_key},
-            ExpiresIn=3600,
+            ExpiresIn=1800,  # 30min
         )
         logger.info(f"Generated presigned URL: {presigned_url}")
-        return presigned_url
+        return {"presigned_url": presigned_url, "file_key": file_key}

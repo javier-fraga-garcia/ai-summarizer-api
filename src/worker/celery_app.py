@@ -5,4 +5,4 @@ from core.config import settings
 celery_app = Celery("summarizer_app", broker=settings.CELERY_BROKER)
 celery_app.autodiscover_tasks(["worker.tasks"])
 
-from worker.tasks import scrape, summarize  # noqa: F401,E402
+from worker.tasks import scrape, summarize, audio_generator, storage  # noqa: F401,E402

@@ -1,7 +1,7 @@
 from google import genai
 
-from logger import get_logger
-from config import settings
+from core.logger import get_logger
+from core.config import settings
 
 logger = get_logger(__name__)
 
@@ -14,7 +14,7 @@ class Summarizer:
 
     IMPORTANT:
     - Always preserve the **original language** of the article. If the article is in Spanish, the summary must be in Spanish. Do not translate under any circumstances.
-    - The summary must not exceed 200 words.
+    - The summary must not exceed 150 words.
     - Focus solely on the key points and essential information from the article.
     - Do not include introductions, conclusions, opinions, or generic phrases.
     - Do not add any extra commentary; return only the summary text.
