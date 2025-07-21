@@ -24,11 +24,11 @@ class Summarizer:
     {article}
     """
 
-    @staticmethod
-    def summarize(content: str) -> str:
+    @classmethod
+    def summarize(cls, content: str) -> str:
         logger.info("Summarizing content")
-        message = Summarizer.prompt.format(article=content)
-        respose = Summarizer.client.models.generate_content(
-            model=settings.AI_MODEL, contents=message
+        message = cls.prompt.format(article=content)
+        response = cls.client.models.generate_content(
+            model=settings.GEMINI_MODEL, contents=message
         )
-        return respose.text
+        return response.text
