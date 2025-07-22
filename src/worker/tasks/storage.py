@@ -27,8 +27,6 @@ def store(data: dict) -> None:
         job.file_key = results.get("file_key")
         db.commit()
 
-        os.remove(data.get("file_path"))
-
     except Exception as e:
         logger.error(e)
         if job:
@@ -36,4 +34,5 @@ def store(data: dict) -> None:
         raise
 
     finally:
+        os.remove(data.get("file_path"))
         db.close()
